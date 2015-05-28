@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= movie_title %></title>
-    <!-- <link rel="stylesheet" href="home.css"> -->
+    <title><%= actor_name %></title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/home.css">
   </head>
 
   <body>
 
 
-    <h1><%= movie_title %></h1>
-    <table>
-      <tr>
-        <td> Genre:</td>
-        <td><%= movie_info[0]["genre"] %></td>
-      </tr>
-      <table>
-        <tr>
-          <td> Studio:</td>
-          <td><%= movie_info[0]["studio"] %></td>
-        </tr>
-    </table>
+    <h1><%= actor_name %></h1>
 
-
-    <table>
-      <% movie_info.each do |hash| %>
+    <table id="titles">
       <tr>
-        <td><%= hash["actors"] %></td>
-        <td><%= hash["role"] %></td>
+        <td><strong>Movie Title</strong></td>
+        <td><strong>Character</strong></td>
       </tr>
+      <% actor_info.each do |hash| %>
+        <% if hash["character"] == nil %>
+          <tr>
+            <td><a href="/movies/<%= hash['title'] %>"><%= hash["title"] %></a></td>
+            <td>Info Not Available</td>
+          </tr>
+        <% else %>
+          <tr>
+            <td><a href="/movies/<%= hash['title'] %>"><%= hash["title"] %></a></td>
+            <td><%= hash["character"] %></td>
+          </tr>
+        <% end %>
       <% end %>
     </table>
+
+    <br>
+
+    <div><a href="/movies">Home</a></div>
   </body>
 </html>

@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>Actors</title>
-    <!-- <link rel="stylesheet" href="home.css"> -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/home.css">
   </head>
 
   <body>
     <h1>Actors</h1>
 
-    <ul>
+    <ul id="actors">
       <% actors.each do |hash| %>
         <li><a href="/actors/<%= hash["name"] %>"><%= hash["name"]%></a></li>
       <% end %>
