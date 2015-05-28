@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Actors</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+  </head>
+
+  <body>
+    <h1>Actors</h1>
+
+    <ul>
+      <% actors.each do |hash| %>
+        <li><a href="/actors/<%= hash["name"] %>"><%= hash["name"]%></a></li>
+      <% end %>
+    </ul>
+  </body>
+</html>

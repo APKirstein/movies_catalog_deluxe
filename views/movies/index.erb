@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+  </head>
+
+  <body>
+    <h1>Movies</h1>
+
+    <ul>
+      <% movies.each do |hash| %>
+        <li><a href="/movies/<%= hash["title"] %>"><%= hash["title"]%></a></li>
+      <% end %>
+    </ul>
+  </body>
+</html>
